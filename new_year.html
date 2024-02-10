@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('img/背景.jpg'); /* 替换为你的实际背景图片路径 */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; /* 这将使背景图片拉伸以适配所有屏幕尺寸 */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* 根据背景颜色调整字体颜色以确保可读性 */
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .greeting-container {
+            text-align: center;
+            font-size: 24px;
+            width: 80%;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="greeting-container" id="randomGreeting"></div>
+
+<script>
+    // 新春祝福语数组
+    const greetings = [
+        '祝您新春快乐，万事如意！',
+        '新年新气象，阖家欢乐，身体健康！',
+        '恭喜发财，福星高照，好运连连！',
+        // 添加更多祝福语...
+    ];
+
+    function getRandomGreeting() {
+        const randomIndex = Math.floor(Math.random() * greetings.length);
+        document.getElementById('randomGreeting').innerText = greetings[randomIndex];
+    }
+
+    window.onload = getRandomGreeting;
+</script>
+
+</body>
+</html>
